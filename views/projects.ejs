@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  <link rel="shortcut icon" type="image/png"  href="http://www.artbabble.org/sites/default/files/uploads/logos/RG%20icon%20for%20app.png">
+
+    
+
+    <!-- Bootstrap core CSS -->
+  <title>Projects</title>
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/starter-template.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Collegesym</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li ><a href="/">Home</a></li>
+             <li class ="active"><a href="/projects" >Projects</a></li>
+             <li><a href="/about">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+   <ul class="inline">
+	   <li> <div class="container">
+		<!--form -->
+	<div class="row">
+    <div class="span4 offset4">
+      <div class="well">
+        <legend>Get Your Attendance on EMAIL(For MIT, Manipal)</legend>
+        <form method="POST" action="/attendance" accept-charset="UTF-8">
+              
+           <input class="span3" placeholder="Student ID:" type="text" name="studId">
+            <input class="span3" placeholder="Bday(yyyy-mm-dd):" type="text" name="bday"> 
+            <input class="span3" placeholder="Email ID" type="text" name="email"> 
+            
+            <button class="btn-info btn" type="submit" onclick="myFunction()">SEND</button> 
+            <%if (pressed== true ) {%>
+     <p> <b>Check Your Email for Attendance :) !!!</b></p>
+     <script>confirm("Check your EMAIL")</script>
+     
+     <% } %>
+                 
+        </form> 
+      </div>
+      
+    </div>
+</div>
+		
+		  
+		   </div> <!-- /.container -->
+		   
+		      <li> <div class="container">
+		<!--form -->
+	<div class="row">
+    <div class="span4 offset4">
+      <div class="well">
+        <html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<legend>
+			Get Attendance on SMS Anytime Anywhere</legend>
+		<blockquote>
+			<p>
+				<strong><span style="color:#800000;"><em>Send :</em></span></strong></p>
+			<p>
+				<strong><span style="color:#800000;"><em>@websismit 120905412 1994-01-27</em></span></strong></p>
+			<p>
+				<strong><span style="color:#800000;"><em>to 9266592665</em></span></strong></p>
+		</blockquote>
+		<p>
+			<strong><em><u>Standard SMS rates apply :)</u></em></strong></p>
+		<p>
+			&nbsp;</p>
+	</body>
+</html>
+
+      </div>
+      
+    </div>
+</div>
+		
+		  
+		   </div> <!-- /.container -->
+		   </ul>
+		   <script>function mFunction</script>
+		  
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+  </body>
+</html>

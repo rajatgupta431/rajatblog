@@ -1,0 +1,55 @@
+<html>
+	<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+ 
+  <link rel="stylesheet" href="css/style.css">
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+
+	
+	</head>
+	<body>
+
+<div class ="container">
+<form class="form-horizontal" action="/createnew" method="POST">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Add New POST</legend>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="title">Title</label>
+  <div class="controls">
+    <input id="title" name="title" type="text" placeholder="Add Title" class="input-medium" >
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="control-group">
+  <label class="control-label" for="post">Post</label>
+  <div class="controls">                     
+    <textarea placeholder="Start typing here . . . ." id="post" name="post" rows="25" cols="100"></textarea>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="control-group">
+  <label class="control-label" for="submit"></label>
+  <div class="controls">
+    <button id="submit" name="submit" class="btn btn-success">POST</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+<script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/transition.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>
