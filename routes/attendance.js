@@ -3,7 +3,7 @@ jar = request.jar(),
 cookie = request.cookie("name =Rajo");
 jar.add(cookie);
 var mandrill = require('mandrill-api/mandrill');
-var mandrill_client = new mandrill.Mandrill('BsNC2RDQpKgoSUklXeQVvA'); 
+var mandrill_client = new mandrill.Mandrill('Your api key'); 
 var usermongo = require('./mongo.js');
 
 exports.attendance = function(req,res){
