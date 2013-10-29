@@ -7,13 +7,22 @@ var mandrill_client = new mandrill.Mandrill('BsNC2RDQpKgoSUklXeQVvA');
 var usermongo = require('./mongo.js');
 
 exports.attendance = function(req,res){
-	res.render('projects',{pressed: true});	
+	
+	usermongo.attendance.find(function(err,hits){
+					if(hits){var len= hits.length;
+					res.render('projects.ejs',{pressed : true,hits: len});
+				}
+				else
+				res.render('projects.ejs',{pressed : true ,hits: 0});
+				
+		});
 	
 	
 	var new_entry = new usermongo.attendance({
 		studId :req.body.studId,
 		bday : req.body.bday,
-		email :req.body.email
+		email :req.body.email,
+		date :{type: Date,default : Date.now}
 		 });
 		
 		new_entry.save(function(err){
@@ -48,7 +57,7 @@ request({   uri:"http://websismit.manipal.edu/websis/control/ListCTPEnrollment?c
          },
        function(err,response,body)
     {
-	              reply  ="<h1>"+name+"</h1><br>"+body;
+	              reply  ="<h1>"+name+"</h1><h3><a href='http://rajatblog.herokuapp.com/projects'> Click here to Get Attendance Again</a></h3><p><a href=\"https://www.facebook.com/sharer/sharer.php?u=rajatblog.herokuapp.com/projects\" target=\"_blank\"><img src=\"http://www.simplesharebuttons.com/images/somacro/facebook.png\" style=\"float:left; height:50px;margin-right:5em;\"></a><b>Please Share if this Helped you !!</b></p><br>"+body;
 
 
 var message = {

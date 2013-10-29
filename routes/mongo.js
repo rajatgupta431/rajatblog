@@ -14,7 +14,8 @@ var userSchema = new Schema({
 var attendanceSchema= new Schema({
 	studId: String,
 	bday: String,
-	email : String
+	email : String,
+	date :{type: Date,default : Date.now}
 });		
 	
 module.exports ={
