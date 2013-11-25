@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Rajat Gupta">
+    <meta property="og:title" content="Music Videos of Rajat Gupta !!" />
+    <meta property="og:description" content="Guitar covers of famous Hindi and Punjabi songs. Also a few self composed songs!!!" />
+<meta property="og:url" content="http://www.rajatgupta.info/videos" />
+<meta property="og:image" content="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-prn2/q71/s720x720/1280857_660080634004581_1258286259_n.jpg" />
+  <link rel="shortcut icon" type="image/png"  href="http://www.artbabble.org/sites/default/files/uploads/logos/RG%20icon%20for%20app.png">
+
+
+    <!-- Bootstrap core CSS -->
+  <title>Rajat's Videos</title>
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/starter-template.css" rel="stylesheet">
+    <link href="/stylesheets/style1.css" rel="stylesheet">
+
+   
+  </head>
+
+  <body style="opacity: 0.9;background-attachment:fixed;">
+	    <ul class="cb-slideshow">
+    <li>
+        <span>Image 01</span>
+        
+    </li>
+    <li>
+        <span>Image 02</span>
+        </li>
+    <li>
+        <span>Image 03</span>
+        </li>
+        <li>
+        <span>Image 04</span>
+        </li>
+</ul>
+	  
+   
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Collegesym</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li ><a href="/">Home</a></li>
+             <li><a href="/projects">Projects</a></li>
+             <li class="active"><a href="/videos">Videos</a></li>
+                        <li ><a href="/about">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+    
+ <div class="container" style ="width: 60%; margin-left:100px;">	 
+
+<%for(var i=0; i < entry.length ; i++){%>
+	
+<div class = "container" style = "float: left">
+      <h5 style ="margin-left :0em;"><b><a target="_blank" href="http://www.youtube.com/watch?v=<%-entry[i].media$group.yt$videoid.$t%>" style="color:black"><%=entry[i].title.$t%></a></b></h5>
+  <!-- <p><b><i><%=entry[i].title.$t%></i></b> </-->
+	<div style="padding:10px;background:#000;webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px;width:320px;margin:0 auto;overflow:hidden;">
+	<iframe width="300" height="210" src="http://www.youtube.com/embed/<%-entry[i].media$group.yt$videoid.$t%>" frameborder="0" allowfullscreen align ="middle" ></iframe>
+	</div>
+ </div>
+  
+<%}%>
+ </div> 
+		 
+		  
+		
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

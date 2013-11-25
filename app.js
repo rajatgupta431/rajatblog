@@ -13,6 +13,7 @@ var create = require('./routes/create');
 var login = require('./routes/login');
 var projects = require('./routes/projects');
 var attendance = require('./routes/attendance');
+var videos = require('./routes/youtube');
 
 
 var app = express();
@@ -50,6 +51,7 @@ app.get('/create',function(req,res){
 	
 	});
 app.post('/login',login.login);
+app.get('/videos',videos.videos);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
