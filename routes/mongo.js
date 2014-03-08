@@ -1,4 +1,4 @@
-var mongo = require('mongoose').connect(process.env.MONGOHQ_URL) ;
+var mongo = require('mongoose').connect('mongodb://rajatgupta431:1271994127@paulo.mongohq.com:10086/blogapp') ;
 var Schema = mongo.Schema;
 var blogSchema = new Schema({
 	title: String,
