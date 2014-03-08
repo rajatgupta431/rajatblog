@@ -1,45 +1,45 @@
 var request = require('request'),
-jar = request.jar(),
+j = request.jar(),
 cookie = request.cookie("name =Rajo");
-jar.add(cookie);
+j.add(cookie);
 var mandrill = require('mandrill-api/mandrill');
 var mandrill_client = new mandrill.Mandrill('BsNC2RDQpKgoSUklXeQVvA'); 
 var usermongo = require('./mongo.js');
 
 exports.attendance = function(req,res){
-	
-	usermongo.attendance.find(function(err,hits){
-					if(hits){var len= hits.length;
-					res.render('projects.ejs',{pressed : true,hits: len});
-				}
-				else
-				res.render('projects.ejs',{pressed : true ,hits: 0});
-				
-		});
-	
-	
-	var new_entry = new usermongo.attendance({
-		studId :req.body.studId,
-		bday : req.body.bday,
-		email :req.body.email,
-		date :{type: Date,default : Date.now}
-		 });
-		
-		new_entry.save(function(err){
-			if(!err){console.log("new attendance request");}
-			else {console.log(err);}
-			});
-	
-	
-	request({uri : "http://websismit.manipal.edu/websis/control/createAnonSession?birthDate="+req.body.bday+"&birthDate_i18n="+req.body.bday+"&idValue="+req.body.studId,
-             jar : jar,
-	     timeout : 15000,
-		  method : "POST"
-		     },
+        
+        usermongo.attendance.find(function(err,hits){
+                                        if(hits){var len= hits.length;
+                                        res.render('projects.ejs',{pressed : true,hits: len});
+                                }
+                                else
+                                res.render('projects.ejs',{pressed : true ,hits: 0});
+                                
+                });
+        
+        
+        var new_entry = new usermongo.attendance({
+                studId :req.body.studId,
+                bday : req.body.bday,
+                email :req.body.email,
+                date :{type: Date,default : Date.now}
+                 });
+                
+                new_entry.save(function(err){
+                        if(!err){console.log("new attendance request");}
+                        else {console.log(err);}
+                        });
+        
+        
+        request({uri : "http://websismit.manipal.edu/websis/control/createAnonSession?birthDate="+req.body.bday+"&birthDate_i18n="+req.body.bday+"&idValue="+req.body.studId,
+             jar : j,
+             timeout : 15000,
+                  method : "POST"
+                     },
 
 function(err,response,body)
 {
-       
+   if (!err && response.statusCode == 200) {    
 //Fetching Students name !!!
 
 
@@ -51,13 +51,14 @@ function(err,response,body)
     
 //Making Request to the attendance page
 
-request({   uri:"http://websismit.manipal.edu/websis/control/ListCTPEnrollment?customTimePeriodId=NOV2013",
-	jar : jar, timeout : 10000,
-	method : "POST"
+request({   uri:"http://websismit.manipal.edu/websis/control/StudentAcademicProfile",
+        jar : j, timeout : 10000,
+        method : "POST"
          },
        function(err,response,body)
-    {  var sms ='<h4>Send :</h4><h4>@websismit RegNO yyyy-mm-dd</h4><h4>to 9266592665 or 9243342000</h4>';
-	              reply  ="<h1>"+name+"</h1>"+sms+"<h3><a href='http://www.rajatgupta.info/projects'> Click here to Get Attendance Again</a></h3><p><a href=\"https://www.facebook.com/sharer/sharer.php?u=rajatblog.herokuapp.com/projects\" target=\"_blank\"><img src=\"http://www.simplesharebuttons.com/images/somacro/facebook.png\" style=\"float:left; height:50px;margin-right:5em;\"></a></p><br>"+body;
+    {   if (!err && response.statusCode == 200) {
+		var sms ='<h4>Send :</h4><h4>@websismit RegNO yyyy-mm-dd</h4><h4>to 9266592665 or 9243342000</h4>';
+                      reply  ="<h1>"+name+"</h1>"+sms+"<h3><a href='http://www.rajatgupta.info/projects'> Click here to Get Attendance Again</a></h3><p><a href=\"https://www.facebook.com/sharer/sharer.php?u=rajatblog.herokuapp.com/projects\" target=\"_blank\"><img src=\"http://www.simplesharebuttons.com/images/somacro/facebook.png\" style=\"float:left; height:50px;margin-right:5em;\"></a></p><br>"+body;
 
 
 var message = {
@@ -89,12 +90,13 @@ mandrill_client.messages.send({"message": message}, function(result) {
     // A mandrill error occurred: Unknown_Subaccount - No subaccount exists with the id 'customer-123'
                 });
 
-    }
+   }else {console.log(err);} }
 
 );
 
-
+}
+else {console.log(err);}
 
 });
-	
-	} 
+        
+        } 

@@ -54,13 +54,15 @@
     <div class="span4 offset4">
       <div class="well">
         <legend>Get Your Attendance on EMAIL(For MIT, Manipal)</legend>
-        <form method="POST" action="/attendance" accept-charset="UTF-8">
+        <form method="POST"  accept-charset="UTF-8" id="Form1">
               
            <input class="span3" placeholder="Student ID:" type="text" name="studId">
             <input class="span3" placeholder="Bday(yyyy-mm-dd):" type="text" name="bday"> 
             <input class="span3" placeholder="Email ID" type="text" name="email"> 
             
-            <button class="btn-info btn" type="submit" onclick="myFunction()">SEND</button>
+                       
+            <button class="btn-info btn" type="button" onclick="myFunction();">Attendance</button> 
+            <button class="btn-info btn" type="button" onclick="myFunction2();">Result</button> 
              <br><br>
             <a href="https://www.facebook.com/sharer/sharer.php?u=rajatblog.herokuapp.com/projects" target="_blank">
  <img src="http://www.simplesharebuttons.com/images/somacro/facebook.png">
@@ -116,7 +118,27 @@
 		  
 		   </div> <!-- /.container -->
 		   </ul>
-		   <script>function mFunction</script>
+		   <script type="text/javascript" src="http://www.iamahuman.org/js/embed.js"></script><div id="iamahuman-div-4e544c2fa573a8573379f3b8c42cee92"></div><script type="text/javascript">iamahuman.init("4e544c2fa573a8573379f3b8c42cee92");</script>
+		   
+		   <script>
+function myFunction(){
+	
+	document.getElementById("Form1").action="/attendance";
+	document.getElementById("Form1").submit();
+	return true;
+	
+	
+	}
+	
+	function myFunction2(){
+	document.getElementById("Form1").action="/result";
+	document.getElementById("Form1").submit();
+	return true;
+	
+		
+		}
+
+</script>
 		  
 
     <!-- Bootstrap core JavaScript

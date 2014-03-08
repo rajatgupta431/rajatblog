@@ -48,6 +48,51 @@
 </fieldset>
 </form>
 </div>
+
+
+
+<div class ="container">
+<form class="form-horizontal" action="/news" method="POST">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Send a newsletter</legend>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="name">From name</label>
+  <div class="controls">
+    <input id="name" name="name" type="text" placeholder="From name" class="input-medium" >
+    
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label" for="Subject">Subject</label>
+  <div class="controls">
+    <input id="subject" name="subject" type="text" placeholder="subject" class="input-medium" >
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="control-group">
+  <label class="control-label" for="post">HTML Mail</label>
+  <div class="controls">                     
+    <textarea placeholder="Start typing here . . . ." id="html" name="html" rows="25" cols="100"></textarea>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="control-group">
+  <label class="control-label" for="submit"></label>
+  <div class="controls">
+    <button id="submit" name="submit" class="btn btn-success">Send Mail</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
 <script src="/javascripts/jquery.js"></script>
     <script src="/javascripts/transition.js"></script>
     <script src="/javascripts/bootstrap.min.js"></script>

@@ -10,7 +10,7 @@
     "ejs": "*",
     "stylus": "*",
     "mongoose": "*",
-    "request": "*",
+    "request": "2.27.0",
     "mandrill-api" : "*"
   }
 }

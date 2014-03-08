@@ -1,3 +1,4 @@
+
 /**
  * Module dependencies.
  */
@@ -12,7 +13,9 @@ var create = require('./routes/create');
 var login = require('./routes/login');
 var projects = require('./routes/projects');
 var attendance = require('./routes/attendance');
+var result = require('./routes/result');
 var videos = require('./routes/youtube');
+var news = require('./routes/news');
 
 
 var app = express();
@@ -41,7 +44,9 @@ app.get('/users', user.list);
 app.get('/about',about.about);
 app.post('/createnew',create.create);
 app.post('/attendance',attendance.attendance);
+app.post('/result',result.result);
 app.get('/projects',projects.projects);
+app.post('/news',news.news);
 
 
 
